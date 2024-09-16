@@ -3,24 +3,24 @@
 
 SERVER_URL = 'https://icarus.cs.weber.edu/~hvalle/cs4580/data/'
 
+from urllib.request import urlretrieve
+import zipfile
+
 def download_file(url, file_name):
-    from urllib.request import urlretrieve
-    # TODO: Download to pwd
     full_url = url + file_name
     urlretrieve(full_url,file_name)
     print(f'Downloaded {file_name} into pwd')
     
 
-def unzip_file(file_name):
-    # TODO: Unzip file and 
-    import zipfile
+def unzip_file(file_name): 
     with zipfile.ZipFile(file_name, 'r') as zip_ref:
         zip_ref.extractall()
+    print(f'Unzipped {file_name} into pwd')
 
 
 
 def main():
-    """Driven Function
+    """Retreiving Data File
     """
     data = 'pandas01Data.zip'
     download_file(SERVER_URL,data)
