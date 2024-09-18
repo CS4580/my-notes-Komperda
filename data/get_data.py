@@ -22,7 +22,7 @@ def unzip_file(file_name):
 def main():
     """Retreiving Data File
     """
-    data = 'pandas01Data.zip'
+    data = 'pandas02Data.zip'
     download_file(SERVER_URL,data)
     unzip_file(data)
     
