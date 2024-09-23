@@ -17,14 +17,18 @@ def unzip_file(file_name):
         zip_ref.extractall()
     print(f'Unzipped {file_name} into pwd')
 
+#TODO Create a function to download files directly from kaggle
 
 
 def main():
     """Retreiving Data File
     """
-    data = 'pandas02Data.zip'
-    download_file(SERVER_URL,data)
+    data = 'hotel-booking-demand.zip'
+    #download_file(SERVER_URL,data)
     unzip_file(data)
+
+    # TODO: Set user input options to extract files
+    # from different sources: -url, -kaggle
     
 
 
