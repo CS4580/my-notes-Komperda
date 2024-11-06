@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import get_data as gt #your package
+import Levenshtein
 
 # Constants
 K = 10  # number of closest matches
@@ -64,6 +65,9 @@ def jaccard_similarity_weighted(df: pd.DataFrame, comparator_genre: str):
             numerator += weighted_dictionary[genre]
     return float(numerator)/float(denominator)
 
+
+def knn_levenshtein_title():
+    pass
 
 def knn_analysis_driver(data_df, base_case, comparison_type, metric_func, sorted_value='metric'):
     df = data_df.copy()  # make a copy of the dataframe
@@ -136,7 +140,16 @@ def main():
     knn_analysis_driver(data_df=data, base_case=base_case,
                         comparison_type='genres', metric_func=jaccard_similarity_weighted,
                         sorted_value='jaccard_similarity_weighted')
+    
 
+    # Task 7: Levenshtein Distance based on Title
+    data = gt.load_data(data_file, index_col='IMDB_id')
+    print(f'\nTask 7:KNN Analysis with Levenshtein Distance')
+    base_case = data.loc[BASE_CASE_ID]
+    print(f'Comparing all movies to our case: {base_case["title"]}')
+    knn_analysis_driver(data_df=data, base_case=base_case,
+                        comparison_type='title', metric_func=Levenshtein.distance,
+                        sorted_value='levenshtein_distance')
 
 
 if __name__ == '__main__':
