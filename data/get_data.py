@@ -23,9 +23,10 @@ def unzip_file(file_name):
 def main():
     """Retreiving Data File
     """
-    data = 'hotel-booking-demand.zip'
-    #download_file(SERVER_URL,data)
-    unzip_file(data)
+    #data = 'hotel-booking-demand.zip'
+    data = 'movies.csv'
+    download_file(SERVER_URL,data)
+    #unzip_file(data)
 
     # TODO: Set user input options to extract files
     # from different sources: -url, -kaggle
