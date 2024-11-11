@@ -148,4 +148,46 @@ For our example we will use:
 cosine_and_weighted_jaccard()
 ```
 
+### Prediction Metrics
+A `prediction` is as simple as a guess about what is going to transpire
+One prediction is `yes` or `no`. Binary.
+
+How do we measure `accuracy` of the prediction?
+
+```python
+accuracy_metric.py
+```
+
+
+
+### Confusion Matrix
+It is performed to measure how well your classification model is.
+The model could be `binary` or `multi-class`. Each entry in a confusion 
+matrix represents specific combination of predicted vs actual results.
+
+For binary classificaitono, you have `four` parts
+- True Positive (TP): Correctly predicted positive observations
+- True Negative (TN): Correctly predicted negative observations
+- False Positive (FP): Incorrecly predicted positive obserations (`Type 1 Error`)
+- False Negative (FN): Incorrectly predicted negative observations (`Type 2 Error`)
+
+Strucutre of the Matrix
+
+|      
+
+
+
+
+Key Metrics
+- `Accuracy`
+- `Precision`
+- `Recall`
+- `F1 Score`
+
+
+```python
+# See
+confusion_matrix.py
+```
+
 
